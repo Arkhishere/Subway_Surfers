@@ -1,31 +1,40 @@
 class KarakterSurfer:
     def __init__(self, nama):
+        # TODO 1: Inisialisasi properties
         self.nama = nama
         self.skor = 0
         self.koin = 0
         self.is_running = True
 
     def berlari(self):
+        # TODO 2: Mulai berlari
         self.is_running = True
         self.skor += 10
-        print(f"{self.nama} sedang berlari kencang menghindari inspektur! Skor bertambah menjadi {self.skor}.")
+        print(f"{self.nama} lagi lari kabur dari inspektur! Skor jadi {self.skor}")
 
     def ambil_koin(self, jumlah):
+        # TODO 3: Tambahkan koin
         self.koin += jumlah
-        print(f"{self.nama} mengambil {jumlah} koin. Total koin sekarang: {self.koin}.")
+        print(f"{self.nama} dapet {jumlah} koin. Total koin sekarang ada {self.koin}")
 
     def tabrak_rintangan(self):
+        # TODO 4: Tabrak rintangan & Game Over
         self.is_running = False
-        print(f"Brakk! {self.nama} menabrak rintangan. Tertangkap oleh inspektur! (Game Over)")
+        print(f"Aduh! {self.nama} nabrak rintangan, ketangkep deh... Game Over!")
 
     def info_player(self):
-        status_lari = "Sedang Berlari" if self.is_running else "Berhenti (Tertangkap)"
-        print("--- STATUS PEMAIN ---")
-        print(f"Nama Karakter : {self.nama}")
-        print(f"Skor Saat Ini : {self.skor}")
-        print(f"Jumlah Koin   : {self.koin}")
-        print(f"Status        : {status_lari}")
-        print("---------------------")
+        # TODO 5: Cetak status terkini
+        if self.is_running == True:
+            status = "Lagi lari"
+        else:
+            status = "Ketangkep"
+        
+        print("Status Pemain:")
+        print(f"Nama   : {self.nama}")
+        print(f"Skor   : {self.skor}")
+        print(f"Koin   : {self.koin}")
+        print(f"Status : {status}")
+        print()
 
 
 player1 = KarakterSurfer("Jake")
